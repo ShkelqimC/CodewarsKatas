@@ -10,8 +10,56 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            string str = "X";
-            Console.WriteLine(infected(str));
+
+        }
+
+
+        //Jaden kasing strings - 7kyu
+        public static string ToJadenCase(string phrase)
+        {
+            var test = phrase.Split(' ').ToList();
+            for (int i = 0; i < test.Count; i++)
+            {
+                var temp = char.ToUpper(test[i][0]).ToString();
+                test[i] = test[i].Remove(0, 1);
+                test[i] = test[i].Insert(0, temp);
+            }
+
+            phrase = string.Join(' ', test);
+            return phrase;
+
+            //return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(phrase); <- RLYYYYY
+            //return String.Join(" ", phrase.Split().Select(i => Char.ToUpper(i[0]) + i.Substring(1))); - LINQ
+        }
+        //Functional addition - 7kyu
+        public static Func<double, double> Add(double n)
+        {
+            return x => x + n;
+        }
+        //Check the exam - 8kyu
+        public static int CheckExam(string[] arr1, string[] arr2)
+        {
+            int count = 0;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (string.IsNullOrEmpty(arr2[i]))
+                {
+                    continue;
+                }
+                else if (arr1[i] == arr2[i])
+                {
+                    count += 4;
+                }
+                else if (arr1[i] != arr2[i])
+                {
+                    count -= 1;
+                }
+
+
+            }
+
+            
+            return count<0? 0: count;
         }
         //Pandemia - 7kyu
         public static double infected(string s)
