@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,58 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
+            string str = "X";
+            Console.WriteLine(infected(str));
         }
+        //Pandemia - 7kyu
+        public static double infected(string s)
+        {
+            
+            var list1 = s.Split('X').ToList();
+            double total = list1.Sum(x => x.Length);
+            if (total == 0)
+            {
+                return 0.0;
+            }
+            var list2 = list1.Where(x => x.Contains("1")).ToList();
+            double part = list2.Sum(x => x.Length);
 
+            return 100 *part / total;
+        }
+        //All Star Code Challenge #18 - 8kyu
+        public static int StrCount(string str, string letter)
+        {
+            return str.Count(x => x.ToString() == letter);
+        }
+        //Encrypt this! - 6kyu - lyckades inte riktigt lösa denna..  //todo
+        public static string EncryptThis(string input)
+        {
 
+                var test = input.Split(' ').ToList();
+
+                for (int i = 0; i < test.Count; i++)
+                {
+                    if (test[i].Length == 1)
+                    {
+                        int t = test[i][0];
+                        test[i] = test[i].Replace(test[i], t.ToString());
+                        continue;
+                    }
+                    if (test[i].Length > 1)
+                    {
+                        int t = test[i][0];
+                        char temp = test[i][1];
+                        test[i] = test[i].Replace(test[i][1], test[i][^1]);
+                        test[i] = test[i].Remove(test[i].Length-1, 1);
+                        // test[i] = test[i].Replace(test[i][1], temp);
+                        test[i] = test[i].Insert(test[i].Length, temp.ToString());
+                        test[i] = test[i].Replace(test[i][0].ToString(), t.ToString());
+                    }
+
+                }
+
+                return string.Join(' ', test);
+        }
         //Last Survivor
         public static string LastSurvivor(string letters, int[] coords)
         {
@@ -28,6 +78,30 @@ namespace Codewars
             acrostic.Select(x => x.First()).ToList().ForEach(x => sb.Append(x));
             return string.Concat(acrostic.Select(x => x.First()));
         }
+        //Hello, Name or World!
+        public static string Hello(string name = "World")
+        {
+            return (name == null || name == string.Empty) ? $"Hello, World!" : $"Hello, {char.ToUpper(name[0])}{name.Substring(1).ToLower()}!";
+        }
+        //Mobile Display Keystrokes
+        public static int MobileKeyboard(string str)
+        {
+            List<string> strList = new List<string>()
+                {"1", "2abc", "3def", "4ghi", "5jkl", "6mno", "7pqrs", "8tuv", "9wxyz", "*", "0", "#"};
+            var test = str.ToList();
+            int count = 0;
+            for (int i = 0; i < test.Count; i++)
+            {
+                foreach (var VARIABLE in strList)
+                {
+                    if (VARIABLE.IndexOf(test[i])!=-1)
+                    {
+                        count += VARIABLE.IndexOf(test[i])+1;
+                    }
+                }
+            }
 
+            return count;
+        }
     }
 }
