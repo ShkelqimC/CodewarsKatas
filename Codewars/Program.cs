@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace Codewars
@@ -11,19 +12,40 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            string a = "AaBbCcXxYyZz0189";
-            string b = "KkLlMmNnOoPp4567";
-            var aa = a.ToCharArray();
-            var bb = b.ToCharArray();
-            int sum = 0;
-            string cc = "HELLO";
-            foreach (var c in cc)
+            int[] a = new[] {1, 2,2};
+            int[] b = new[] {1};
+
+            var test = a.Intersect(b).ToArray();
+            List<int> result = new List<int>();
+
+            var hmm = ArrayDiff(a, b);
+
+            foreach (var i in hmm)
             {
-                sum += (int) c;
+                Console.WriteLine(i);
             }
-            Console.WriteLine(cc.Sum(x=> (int)x));
 
         }
+
+        //Array.diff - 6kyu
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            if (a.Length < 1)
+                return a;
+
+            List<int> result = new List<int>();
+
+            foreach (var i in a)
+            {
+                if (!b.Contains(i))
+                {
+                    result.Add(i);
+                }
+            }
+
+            return result.ToArray();
+        }
+
         //Which string is worth more? - 7kyu
         public static string HighestValue(string a, string b)
         {
