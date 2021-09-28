@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace Codewars
@@ -10,25 +11,33 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            string str = "john McClane";
-
-            var test = str.Split(' ');
-            Array.Reverse(test);
-
-            str = string.Join(' ', test);
-
-            Console.WriteLine(str);
-
+            string a = "AaBbCcXxYyZz0189";
+            string b = "KkLlMmNnOoPp4567";
+            var aa = a.ToCharArray();
+            var bb = b.ToCharArray();
+            int sum = 0;
+            string cc = "HELLO";
+            foreach (var c in cc)
+            {
+                sum += (int) c;
+            }
+            Console.WriteLine(cc.Sum(x=> (int)x));
 
         }
+        //Which string is worth more? - 7kyu
+        public static string HighestValue(string a, string b)
+        {
 
+          return a.Sum(x => (int) x) == b.Sum(x => (int) x) || a.Sum(x => (int)x) > b.Sum(x => (int)x) ? a : b;
+        }
         //Name SHuffler - 8kyu
         public static string NameShuffler(string str)
         {
             var test = str.Split(' ');
             Array.Reverse(test);
 
-            return string.Join(' ', test);
+           // return string.Join(' ', test);
+           return string.Join(' ', str.Split(' ').Reverse());
         }
         //Jaden kasing strings - 7kyu
         public static string ToJadenCase(string phrase)
