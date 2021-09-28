@@ -10,10 +10,26 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
+            string str = "john McClane";
+
+            var test = str.Split(' ');
+            Array.Reverse(test);
+
+            str = string.Join(' ', test);
+
+            Console.WriteLine(str);
+
 
         }
 
+        //Name SHuffler - 8kyu
+        public static string NameShuffler(string str)
+        {
+            var test = str.Split(' ');
+            Array.Reverse(test);
 
+            return string.Join(' ', test);
+        }
         //Jaden kasing strings - 7kyu
         public static string ToJadenCase(string phrase)
         {
