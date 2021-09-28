@@ -12,24 +12,35 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            int[] a = new[] {1, 2,2};
-            int[] b = new[] {1};
+            int[] a = new int[] { 121, 144, 19, 161, 19, 144, 19, 11 };
+            int[] b = new int[] { 11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19 };
 
-            var test = a.Intersect(b).ToArray();
-            List<int> result = new List<int>();
 
-            var hmm = ArrayDiff(a, b);
 
-            foreach (var i in hmm)
-            {
-                Console.WriteLine(i);
-            }
+            var result = comp(a, b);
+
 
         }
 
+
+        //Are they the "same"? - 6kyu
+        public static bool comp(int[] a, int[] b)
+        {
+            if (a.Length ==0)
+                return false;
+
+            a = a.OrderBy(x => x).ToArray();
+            b = b.OrderBy(x => x).ToArray();
+            a = a.Select(x => x * x).ToArray();
+
+            return a.SequenceEqual(b);
+
+        }
         //Array.diff - 6kyu
         public static int[] ArrayDiff(int[] a, int[] b)
         {
+            //return a.Where(x => !b.Contains(x)).ToArray();
+
             if (a.Length < 1)
                 return a;
 
