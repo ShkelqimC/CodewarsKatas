@@ -14,8 +14,15 @@ namespace Codewars
         {
             Console.WriteLine(CalculateAge(1993,2021));
         }
-        //How old will I be in 2099? - 8kyu
-        public static string CalculateAge(int birth, int yearTo)
+
+        //is this a triangle? - 7kyu
+        public static bool IsTriangle(int a, int b, int c)
+        {
+            return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
+        }
+    
+    //How old will I be in 2099? - 8kyu
+    public static string CalculateAge(int birth, int yearTo)
         {
             if (birth == yearTo)
                 return "You were born this very year!";
