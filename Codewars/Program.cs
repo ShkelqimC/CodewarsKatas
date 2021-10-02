@@ -12,24 +12,43 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            int[] arr = new[] {0, 1, 2, 3, 5, 8, 13};
-            int n = 3;
-
-            var test1 = arr.Take(n);
-
-            var test2 = arr.TakeLast(n);
-
-            foreach (var i in test1)
+            string[] Deck =
             {
-                Console.WriteLine(i);
+                "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♣",
+                "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦", "A♦",
+                "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♥",
+                "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♠"
+            };
+            string card = "2♣";
+
+        }
+
+        //Grasshopper - Debug sayHello - 8kyu
+        public static string SayHello(string name)
+        {
+            return $"Hello, {name}";
+        }
+        //Define a card suit - 8kyu
+        public static string DefineSuit(string card)
+        {
+            string result = string.Empty;
+            switch (card[^1])
+            {
+                case '♣':
+                    result= "clubs";
+                    break;
+                case '♦':
+                    result= "diamonds";
+                    break;
+                case '♠':
+                    result = "spades";
+                    break;
+                case '♥':
+                    result = "hearts";
+                    break;
             }
 
-            Console.WriteLine();
-            foreach (var i in test2)
-            {
-                Console.WriteLine(i);
-            }
-
+            return result;
         }
         //Function 2 - squaring an argument - 8kyu
         public static double Square(double n) => n * n;
