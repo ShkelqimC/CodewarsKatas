@@ -31,6 +31,8 @@ namespace Codewars
             }
 
         }
+        //Function 2 - squaring an argument - 8kyu
+        public static double Square(double n) => n * n;
         //Function 1 - hello world - 8kyu
         public static string greet() => "hello world!";
         //Simple multiplication - 8kyu
