@@ -31,6 +31,13 @@ namespace Codewars
             }
 
         }
+        //Function 1 - hello world - 8kyu
+        public static string greet() => "hello world!";
+        //Simple multiplication - 8kyu
+        public static int Multiply(int x)
+        {
+            return (x % 2 == 1) ? x * 9 : x * 8;
+        }
         //Enumerable Magic #25 - Take the First N Elements - 8kyu
         public static int[] Take(int[] arr, int n)
         {
