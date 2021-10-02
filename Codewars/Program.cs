@@ -12,24 +12,46 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
+            int[] arr = new[] {0, 1, 2, 3, 5, 8, 13};
+            int n = 3;
 
-       
+            var test1 = arr.Take(n);
+
+            var test2 = arr.TakeLast(n);
+
+            foreach (var i in test1)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine();
+            foreach (var i in test2)
+            {
+                Console.WriteLine(i);
+            }
+
         }
-
-
+        //Enumerable Magic #25 - Take the First N Elements - 8kyu
+        public static int[] Take(int[] arr, int n)
+        {
+            return arr.Take(n).ToArray();
+        }
         //Difference between years. (Level 1) - 7kyu
         public static int HowManyYears(string date1, string date2)
         {
-            return 0;
+            var high = Math.Max(DateTime.Parse(date1).Year, DateTime.Parse(date2).Year);
+            var low = Math.Min(DateTime.Parse(date1).Year, DateTime.Parse(date2).Year);
+
+            return high - low;
         }
         //is this a triangle? - 7kyu
         public static bool IsTriangle(int a, int b, int c)
         {
             return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
         }
-    
-    //How old will I be in 2099? - 8kyu
-    public static string CalculateAge(int birth, int yearTo)
+        
+        //How old will I be in 2099? - 8kyu
+        public static string CalculateAge(int birth, int yearTo)
         {
             if (birth == yearTo)
                 return "You were born this very year!";
