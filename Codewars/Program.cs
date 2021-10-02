@@ -12,9 +12,16 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(CalculateAge(1993,2021));
+
+       
         }
 
+
+        //Difference between years. (Level 1) - 7kyu
+        public static int HowManyYears(string date1, string date2)
+        {
+            return 0;
+        }
         //is this a triangle? - 7kyu
         public static bool IsTriangle(int a, int b, int c)
         {
