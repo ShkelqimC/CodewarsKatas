@@ -12,17 +12,35 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            string[] Deck =
-            {
-                "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♣",
-                "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦", "A♦",
-                "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♥",
-                "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♠"
-            };
-            string card = "2♣";
+            string str = "8 j 8   mBliB8g  imjB8B8  jl  B";
+            string result = "8j8mBliB8gimjB8B8jlB";
 
+            Console.WriteLine(NoSpace(str));
         }
 
+        //Remove String Spaces - 8kyu
+        public static string NoSpace(string input)
+        {
+            //Code it!
+            return input.Replace(" ", "");
+        }
+
+        //Remove duplicates from list - 8kyu
+        public static int[] distinct(int[] a)
+        {
+            return a.Distinct().ToArray();
+        }
+        //Beginner Series #3 Sum of Numbers
+        public static int GetSum(int a, int b)
+        {
+            int result = 0;
+            for (int i = Math.Min(a,b); i <= Math.Max(a,b); i++)
+            {
+                result += i;
+            }
+
+            return result;
+        }
         //Grasshopper - Debug sayHello - 8kyu
         public static string SayHello(string name)
         {
