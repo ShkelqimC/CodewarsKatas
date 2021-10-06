@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -12,12 +13,16 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            string str = "8 j 8   mBliB8g  imjB8B8  jl  B";
-            string result = "8j8mBliB8gimjB8B8jlB";
-
-            Console.WriteLine(NoSpace(str));
+            int dad = 45;
+            int son = 30;
+            Console.WriteLine(TwiceAsOld(dad,son));
         }
+        //Twice as old - 8kyu
+        public static int TwiceAsOld(int dadYears, int sonYears)
+        {
+            return Math.Abs(dadYears - sonYears * 2);
 
+        }
         //Remove String Spaces - 8kyu
         public static string NoSpace(string input)
         {
