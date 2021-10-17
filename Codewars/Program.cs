@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
@@ -13,11 +14,17 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            int dad = 45;
-            int son = 30;
-            Console.WriteLine(TwiceAsOld(dad,son));
+            var arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 3, 3,}.ToList();
+
+            Console.WriteLine(arr.Aggregate((x, y) => x + y));
+
+
         }
-        //Twice as old - 8kyu
+        //Complementary DNA - 7 kyu
+
+       public static string MakeComplement(string dna) => dna.Replace('A', 't').Replace('C', 'g').Replace('T', 'a').Replace('G', 'c').ToUpper();
+        
+            //Twice as old - 8kyu
         public static int TwiceAsOld(int dadYears, int sonYears)
         {
             return Math.Abs(dadYears - sonYears * 2);
