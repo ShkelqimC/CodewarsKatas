@@ -17,12 +17,11 @@ namespace Codewars
             var arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 3, 3,}.ToList();
 
             Console.WriteLine(arr.Aggregate((x, y) => x + y));
-
-
         }
+        //How good are you really? - 8kyu
+        public static bool BetterThanAverage(int[] ClassPoints, int YourPoints) => YourPoints > ClassPoints.Average(x => x);
         //Complementary DNA - 7 kyu
-
-       public static string MakeComplement(string dna) => dna.Replace('A', 't').Replace('C', 'g').Replace('T', 'a').Replace('G', 'c').ToUpper();
+        public static string MakeComplement(string dna) => dna.Replace('A', 't').Replace('C', 'g').Replace('T', 'a').Replace('G', 'c').ToUpper();
         
             //Twice as old - 8kyu
         public static int TwiceAsOld(int dadYears, int sonYears)
