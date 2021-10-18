@@ -14,9 +14,22 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            var arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 3, 3,}.ToList();
+            long check = 8;
 
-            Console.WriteLine(arr.Aggregate((x, y) => x + y));
+            Console.WriteLine(check*(check-1)+1);
+        }
+        //Sum of odd numbers - 7kyu
+        public static long rowSumOddNumbers(long n)
+        {
+            long sum = 0;
+            long firstNumberCount = n*(n-1)+1;
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += firstNumberCount;
+                firstNumberCount += 2;
+            }
+            return sum;
         }
         //How good are you really? - 8kyu
         public static bool BetterThanAverage(int[] ClassPoints, int YourPoints) => YourPoints > ClassPoints.Average(x => x);
