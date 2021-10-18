@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Codewars
@@ -18,6 +19,22 @@ namespace Codewars
 
             Console.WriteLine(check*(check-1)+1);
         }
+        //Switch it Up! - 8kyu
+        public static string SwitchItUp(int number)
+        {
+
+            return number == 0 ? "Zero" :
+                number == 1 ? "One" :
+                number == 2 ? "Two" :
+                number == 3 ? "Three" :
+                number == 4 ? "Four" :
+                number == 5 ? "Five" :
+                number == 6 ? "Six" :
+                number == 7 ? "Seven" :
+                    number == 8 ? "Eight":
+                "Nine";
+        }
+
         //Sum of odd numbers - 7kyu
         public static long rowSumOddNumbers(long n)
         {
