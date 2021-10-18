@@ -19,6 +19,15 @@ namespace Codewars
 
             Console.WriteLine(check*(check-1)+1);
         }
+
+
+        //Are You Playing Banjo? 8 kyu
+        public static string AreYouPlayingBanjo(string name)
+        {
+            return name.StartsWith("R", StringComparison.OrdinalIgnoreCase)
+                ? $"{name} plays banjo"
+                : $"{name} does not play banjo";
+        }
         //Switch it Up! - 8kyu
         public static string SwitchItUp(int number)
         {
