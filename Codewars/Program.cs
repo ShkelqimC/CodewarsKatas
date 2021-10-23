@@ -42,6 +42,23 @@ namespace Codewars
             Console.WriteLine($"{num10}: {BalancedNumber(num10)}");
         }
 
+        //Reverse List Order - 8kyu
+        public static List<int> ReverseList(List<int> list)
+        {
+            // Return a new list with its elements in reverse order compared to the input list
+            // Do not mutate the original list!
+            //var newList = list.ToArray();
+            //Array.Reverse(newList);
+            //return newList.ToList();
+            return list.Reverse<int>().ToList();
+
+        }
+        //Century From Year - 8kyu
+        public static int СenturyFromYear(int year)
+        {
+            return (year - 1) / 100 + 1;
+        }
+
         //Transportation on vacation - 8 kyu
         public static int RentalCarCost(int d)
         {
