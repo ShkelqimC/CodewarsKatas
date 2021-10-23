@@ -8,6 +8,7 @@ using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 
 namespace Codewars
 {
@@ -15,12 +16,68 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            long check = 8;
+         
 
-            Console.WriteLine(check*(check-1)+1);
+            int num1 = 7;
+            int num2 = 959;
+            int num3 = 13;
+            int num4 = 56239814;
+            int num5 = 424;
+
+            Console.WriteLine($"{num1}: {BalancedNumber(num1)}");
+            Console.WriteLine($"{num2}: {BalancedNumber(num2)}");
+            Console.WriteLine($"{num3}: {BalancedNumber(num3)}");
+            Console.WriteLine($"{num4}: {BalancedNumber(num4)}");
+            Console.WriteLine($"{num5}: {BalancedNumber(num5)}");
+            Console.WriteLine();
+            int num6 = 1024;
+            int num7 = 66545;
+            int num8 = 295591;
+            int num9 = 1230987;
+            int num10 = 432;
+            Console.WriteLine($"{num6}: {BalancedNumber(num6)}");
+            Console.WriteLine($"{num7}: {BalancedNumber(num7)}");
+            Console.WriteLine($"{num8}: {BalancedNumber(num8)}");
+            Console.WriteLine($"{num9}: {BalancedNumber(num9)}");
+            Console.WriteLine($"{num10}: {BalancedNumber(num10)}");
         }
 
+        //Transportation on vacation - 8 kyu
+        public static int RentalCarCost(int d)
+        {
+            return d >= 7 ? 40 * d - 50 : d < 7 && d >= 3 ? 40 * d - 20 : d * 40;
+        }
+        //Balanced Number (Special Numbers Series #1 ) - 7kyu //todo alla tester green men attempt 1 fail.........
+        public static string BalancedNumber(int number)
+        {
+            string numbers = number.ToString();
+            string firsthalf = string.Empty;
+            string secondhalf = string.Empty;
+            int sumLeft = 0;
+            int sumRight = 0;
 
+            if (numbers.Length < 3)
+            {
+                return "Balanced";
+            }
+            else if (numbers.Length / 2 % 2 == 0)
+            {
+                firsthalf = numbers.Substring(0, numbers.Length / 2 - 1);
+                secondhalf = numbers.Substring(numbers.Length / 2 + 1);
+
+                sumLeft = firsthalf.Select(x => Convert.ToInt32(x)).Sum(x=> x);
+                sumRight = secondhalf.Select(x => Convert.ToInt32(x)).Sum(x=> x);
+            }
+            else if (numbers.Length / 2 % 2 == 1)
+            {
+                firsthalf = numbers.Substring(0, numbers.Length / 2 );
+                secondhalf = numbers.Substring(numbers.Length / 2+1);
+                sumLeft = firsthalf.Select(x => Convert.ToInt32(x)).Sum(x=> x);
+                sumRight = secondhalf.Select(x => Convert.ToInt32(x)).Sum();
+            }
+
+            return sumRight == sumLeft ? "Balanced" : "Not Balanced";
+        }
         //Are You Playing Banjo? 8 kyu
         public static string AreYouPlayingBanjo(string name)
         {
